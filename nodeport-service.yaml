@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: test-nodeport-servie-v1
+spec:
+  type: NodePort
+  selector:
+    for: nodeport-svc
+  ports:
+    - protocol: TCP
+      port: 4444
+      targetPort: 80
+      nodePort: 30002
